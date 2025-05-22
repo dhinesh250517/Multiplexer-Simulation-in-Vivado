@@ -85,10 +85,11 @@ module mux4_to_1_gate (
     or (Y, A_and, B_and, C_and, D_and);
 endmodule
 
+```
 OUTPUT:
 ![Screenshot 2025-03-14 080501](https://github.com/user-attachments/assets/3a1d2c12-2842-4d72-a70e-aa88e87cb15b)
 
-```
+
 ### 4:1 MUX Data Flow Implementation
 ```verilog
 module mux4_to_1_dataflow (
@@ -105,9 +106,10 @@ module mux4_to_1_dataflow (
                (S1 & ~S0 & C) |
                (S1 & S0 & D);
 endmodule
-OUTPUT: ![Screenshot 2025-03-14 091532](https://github.com/user-attachments/assets/2668a567-4571-4393-9138-542bf1c35e97)
 
 ```
+OUTPUT: ![Screenshot 2025-03-14 091532](https://github.com/user-attachments/assets/2668a567-4571-4393-9138-542bf1c35e97)
+
 ### 4:1 MUX Behavioral Implementation
 ```verilog
 module mux4_to_1_behavioral (
@@ -129,9 +131,10 @@ module mux4_to_1_behavioral (
         endcase
     end
 endmodule
-OUTPUT:![Screenshot 2025-03-14 094203](https://github.com/user-attachments/assets/49d42113-8303-43f5-b615-c4db5fad8457)
 
 ```
+OUTPUT:![Screenshot 2025-03-14 094203](https://github.com/user-attachments/assets/49d42113-8303-43f5-b615-c4db5fad8457)
+
 ### 4:1 MUX Structural Implementation
 
 ![image](https://github.com/user-attachments/assets/eea81c2c-7dfa-43aa-9cea-1ab4ed54db6c)
@@ -163,10 +166,12 @@ module mux4_to_1_structural (
 
     mux2_to_1 mux_final (.A(mux_low), .B(mux_high), .S(S1), .Y(Y));
 endmodule
+
+```
 OUTPUT:
 ![Screenshot 2025-03-15 073225](https://github.com/user-attachments/assets/83f01baa-80ac-4e1c-938c-c3e24f78f3da)
 
-```
+
 ### Testbench Implementation
 ```verilog
 `timescale 1ns / 1ps
@@ -196,6 +201,8 @@ module mux4_to_1_tb;
     end
 endmodule
 ```
+![image](https://github.com/user-attachments/assets/3ed1c67e-c458-4148-bc0f-7b945232ff2b)
+
 ### SAMPLE OUTPUT
 ```verilog
 Time=0 | S1=0 S0=0 | Y_gate=0 | Y_dataflow=0 | Y_behavioral=0 | Y_structural=0
